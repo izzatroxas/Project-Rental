@@ -76,76 +76,76 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="comands.vb" />
-    <Compile Include="Login_Form.vb">
+    <Compile Include="driver\comands.vb" />
+    <Compile Include="form\login\Login_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_Form.Designer.vb">
+    <Compile Include="form\login\Login_Form.Designer.vb">
       <DependentUpon>Login_Form.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laporan_Pengembalian_Form.Designer.vb">
+    <Compile Include="form\laporan\Laporan_Pengembalian_Form.Designer.vb">
       <DependentUpon>Laporan_Pengembalian_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Laporan_Pengembalian_Form.vb">
+    <Compile Include="form\laporan\Laporan_Pengembalian_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laba_Rugi_Form.Designer.vb">
+    <Compile Include="form\common\Laba_Rugi_Form.Designer.vb">
       <DependentUpon>Laba_Rugi_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Laba_Rugi_Form.vb">
+    <Compile Include="form\common\Laba_Rugi_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main_Menu_Form.Designer.vb">
+    <Compile Include="form\common\Main_Menu_Form.Designer.vb">
       <DependentUpon>Main_Menu_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main_Menu_Form.vb">
+    <Compile Include="form\common\Main_Menu_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Master_ID_Form.Designer.vb">
+    <Compile Include="form\common\Master_ID_Form.Designer.vb">
       <DependentUpon>Master_ID_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Master_ID_Form.vb">
+    <Compile Include="form\common\Master_ID_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sql.vb" />
-    <Compile Include="Supir_Form.Designer.vb">
+    <Compile Include="driver\sql.vb" />
+    <Compile Include="form\common\Supir_Form.Designer.vb">
       <DependentUpon>Supir_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Supir_Form.vb">
+    <Compile Include="form\common\Supir_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mobil_Form.Designer.vb">
+    <Compile Include="form\common\Mobil_Form.Designer.vb">
       <DependentUpon>Mobil_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Mobil_Form.vb">
+    <Compile Include="form\common\Mobil_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pinjam_Form.Designer.vb">
+    <Compile Include="form\common\Pinjam_Form.Designer.vb">
       <DependentUpon>Pinjam_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Pinjam_Form.vb">
+    <Compile Include="form\common\Pinjam_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kembali_Form.Designer.vb">
+    <Compile Include="form\common\Kembali_Form.Designer.vb">
       <DependentUpon>Kembali_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Kembali_Form.vb">
+    <Compile Include="form\common\Kembali_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Biaya_Form.Designer.vb">
+    <Compile Include="form\common\Biaya_Form.Designer.vb">
       <DependentUpon>Biaya_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Biaya_Form.vb">
+    <Compile Include="form\common\Biaya_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laporan_Peminjaman_Form.Designer.vb">
+    <Compile Include="form\laporan\Laporan_Peminjaman_Form.Designer.vb">
       <DependentUpon>Laporan_Peminjaman_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Laporan_Peminjaman_Form.vb">
+    <Compile Include="form\laporan\Laporan_Peminjaman_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="connect.vb" />
+    <Compile Include="driver\connect.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -163,40 +163,40 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Login_Form.af.resx">
+    <EmbeddedResource Include="form\login\Login_Form.af.resx">
       <DependentUpon>Login_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_Form.resx">
+    <EmbeddedResource Include="form\login\Login_Form.resx">
       <DependentUpon>Login_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laporan_Pengembalian_Form.resx">
+    <EmbeddedResource Include="form\laporan\Laporan_Pengembalian_Form.resx">
       <DependentUpon>Laporan_Pengembalian_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laba_Rugi_Form.resx">
+    <EmbeddedResource Include="form\common\Laba_Rugi_Form.resx">
       <DependentUpon>Laba_Rugi_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main_Menu_Form.resx">
+    <EmbeddedResource Include="form\common\Main_Menu_Form.resx">
       <DependentUpon>Main_Menu_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Master_ID_Form.resx">
+    <EmbeddedResource Include="form\common\Master_ID_Form.resx">
       <DependentUpon>Master_ID_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Supir_Form.resx">
+    <EmbeddedResource Include="form\common\Supir_Form.resx">
       <DependentUpon>Supir_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mobil_Form.resx">
+    <EmbeddedResource Include="form\common\Mobil_Form.resx">
       <DependentUpon>Mobil_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pinjam_Form.resx">
+    <EmbeddedResource Include="form\common\Pinjam_Form.resx">
       <DependentUpon>Pinjam_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kembali_Form.resx">
+    <EmbeddedResource Include="form\common\Kembali_Form.resx">
       <DependentUpon>Kembali_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Biaya_Form.resx">
+    <EmbeddedResource Include="form\common\Biaya_Form.resx">
       <DependentUpon>Biaya_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laporan_Peminjaman_Form.resx">
+    <EmbeddedResource Include="form\laporan\Laporan_Peminjaman_Form.resx">
       <DependentUpon>Laporan_Peminjaman_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -218,5 +218,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

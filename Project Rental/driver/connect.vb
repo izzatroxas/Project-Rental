@@ -12,7 +12,7 @@ Module connect
 
     Sub Koneksi()
         Try
-            str = "Server=localhost;user id =root; database=project_rental; MultipleActiveResultSets=True;"
+            str = "Server=localhost;user id =root; database=project_rental;password=Davinalfa123; MultipleActiveResultSets=True;"
             conn = New MySqlConnection(str)
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
@@ -28,7 +28,7 @@ Module connect
 
     Function Check() As Boolean
         Try
-            str = "Server=localhost;user id =root; database=project_rental;"
+            str = "Server=localhost;user id =root;password=Davinalfa123; database=project_rental;"
             conn = New MySqlConnection(str)
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
