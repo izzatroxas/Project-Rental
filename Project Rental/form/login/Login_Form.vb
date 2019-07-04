@@ -31,7 +31,7 @@ Public Class Login
                 id = rt.Rows(0).Item(0)
                 Dim tu As String = rt.Rows(0).Item(1)
                 If tu = "ADMINISTRATOR" Or tu = "USER" Then
-                    MsgBox("Login Berhasil")
+                    MsgBox("Login Berhasil : " + id)
                     Dim mm = New Main_Menu
                     mm.Show()
                     Me.Hide()

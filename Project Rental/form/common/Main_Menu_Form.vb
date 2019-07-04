@@ -1,4 +1,5 @@
 ﻿Imports Project_Rental.Sql_com
+Imports Project_Rental.Login
 Public Class Main_Menu
     Private Sub Main_Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         time.Enabled = True
@@ -10,8 +11,7 @@ Public Class Main_Menu
     Sub Getname()
         Dim rn As New DataTable
         Dim cok = Login.id
-
-        sql = "SELECT * FROM lbl_user WHERE Nama_User ='" & cok & "';"
+        sql = "SELECT * FROM tbl_user WHERE Kode_User ='" & cok & "';"
         rn = Sql_datatable(sql)
         If rn.Rows.Count > 0 Then
             nid.Text = rn.Rows(0).Item(1)
