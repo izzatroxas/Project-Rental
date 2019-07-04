@@ -97,13 +97,14 @@ Public Class User
 
     'Buat Save dan Update Database
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles save.Click
-        'dr.Close()
-        sql = "SELECT * FROM tbl_user where Kode_User='" & kode.Text & "'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
         Try
-            If Not dr.HasRows Then
+            sql = "SELECT * FROM tbl_user where Kode_User='" & kode.Text & "'"
+            Dim ds As New DataSet
+            ds = Sql_dataset(sql)
+            ''cmd = New MySqlCommand(sql, conn)
+            ''dr = cmd.ExecuteReader()
+            ''dr.Read()
+            If ds.Tables.Count = 0 Then
                 Dim simpan As String
                 simpan = "INSERT INTO tbl_user (Kode_User, Nama_User, Pwd_User, Status_User) VALUES (@kode, @user, @password, @status)"
                 cmd = New MySqlCommand(simpan, conn)
@@ -114,12 +115,12 @@ Public Class User
                 cmd.ExecuteNonQuery()
             Else
                 Dim edit As String
-                edit = "UPDATE tbl_user SET Nama_User = @nama, Status_User = @stat, Pwd_User = @pwd, WHERE Kode_User = @kd"
+                edit = "UPDATE tbl_user SET Nama_User = @nama, Status_User = @stat, Pwd_User = @pwd WHERE Kode_User = @kd"
                 cmd = New MySqlCommand(edit, conn)
                 cmd.Parameters.AddWithValue("@nama", nama.Text)
                 cmd.Parameters.AddWithValue("@stat", stat.Text)
                 cmd.Parameters.AddWithValue("@pwd", pass.Text)
-                cmd.Parameters.AddWithValue("@kd", pass.Text)
+                cmd.Parameters.AddWithValue("@kd", kode.Text)
 
                 'Dim param As New Dictionary(Of String, Object) From {
                 '   {"@nama", nama.Text},
@@ -140,11 +141,11 @@ Public Class User
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-            'Finally
-            ' dr.Close()
+        Finally
+            dr.Close()
+            Call Clean()
         End Try
         dr.Close()
-        Call Clean()
     End Sub
 
     'Data Grid View nya
@@ -182,8 +183,10 @@ Public Class User
         dr.Read()
         If Not dr.HasRows Then
             Call Baru()
+            dr.Close()
         Else
             Call Found()
+            dr.Close()
         End If
         dr.Close()
     End Sub
