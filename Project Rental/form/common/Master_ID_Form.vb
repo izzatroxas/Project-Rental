@@ -87,7 +87,7 @@ Public Class User
 
     'Close Button
     Private Sub Tutup_Click(sender As Object, e As EventArgs) Handles tutup.Click
-        Me.Close()
+        Application.Exit()
     End Sub
 
     'Show Stat nya buat di Lost Focus in
