@@ -104,7 +104,9 @@ Public Class User
             ''cmd = New MySqlCommand(sql, conn)
             ''dr = cmd.ExecuteReader()
             ''dr.Read()
-            If ds.Tables(0).Rows.Count Then
+            If ds.Tables(0).Rows.Count = 0 Then
+                'Try
+                'If Not dr.HasRows Then
                 Dim simpan As String
                 simpan = "INSERT INTO tbl_user (Kode_User, Nama_User, Pwd_User, Status_User) VALUES (@kode, @user, @password, @status)"
                 cmd = New MySqlCommand(simpan, conn)
