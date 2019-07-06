@@ -468,7 +468,7 @@ Partial Class Main_Menu
         Me.idu.Name = "idu"
         Me.idu.Size = New System.Drawing.Size(88, 17)
         Me.idu.TabIndex = 5
-        Me.idu.Text = "1101171015"
+        Me.idu.Text = "0000000000"
         '
         'Label2
         '

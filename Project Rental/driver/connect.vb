@@ -9,11 +9,11 @@ Module connect
     Public dt As DataTable
     Dim str As String
     Dim aha As String
-    Dim password = "Davinalfa123"
+    Dim pass = "izzatroxas"
 
     Sub Koneksi()
         Try
-            str = "Server=localhost;user id =root; database=project_rental;password=" & password & "; MultipleActiveResultSets=True;"
+            str = "Server=localhost;user id =root; database=project_rental;password=" & pass & "; MultipleActiveResultSets=True;"
             conn = New MySqlConnection(str)
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
@@ -29,7 +29,7 @@ Module connect
 
     Function Check() As Boolean
         Try
-            str = "Server=localhost;user id =root;password=" & password & "; database=project_rental;"
+            str = "Server=localhost;user id =root;password=" & pass & "; database=project_rental;"
             conn = New MySqlConnection(str)
             If conn.State = ConnectionState.Closed Then
                 conn.Open()

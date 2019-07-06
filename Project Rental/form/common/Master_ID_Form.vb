@@ -57,7 +57,7 @@ Public Class User
 
     'buat Show Status "Administrator" dan "User" nya
     Sub Showstat()
-        sql = "SELECT DISTINCT Status_User FROM tbl_user_detail"
+        sql = "SELECT DISTINCT Status_User FROM tbl_user"
         cmd = New MySqlCommand(sql, conn)
         dr = cmd.ExecuteReader
         stat.Items.Clear()
@@ -87,7 +87,7 @@ Public Class User
 
     'Close Button
     Private Sub Tutup_Click(sender As Object, e As EventArgs) Handles tutup.Click
-        Application.Exit()
+        Me.Close()
     End Sub
 
     'Show Stat nya buat di Lost Focus in
@@ -104,7 +104,7 @@ Public Class User
             ''cmd = New MySqlCommand(sql, conn)
             ''dr = cmd.ExecuteReader()
             ''dr.Read()
-            If ds.Tables.Count = 0 Then
+            If ds.Tables(0).Rows.Count Then
                 Dim simpan As String
                 simpan = "INSERT INTO tbl_user (Kode_User, Nama_User, Pwd_User, Status_User) VALUES (@kode, @user, @password, @status)"
                 cmd = New MySqlCommand(simpan, conn)
@@ -113,6 +113,7 @@ Public Class User
                 cmd.Parameters.AddWithValue("@password", pass.Text)
                 cmd.Parameters.AddWithValue("@status", stat.Text)
                 cmd.ExecuteNonQuery()
+                MessageBox.Show("Simpan Berhasil")
             Else
                 Dim edit As String
                 edit = "UPDATE tbl_user SET Nama_User = @nama, Status_User = @stat, Pwd_User = @pwd WHERE Kode_User = @kd"

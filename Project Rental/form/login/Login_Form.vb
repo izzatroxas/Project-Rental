@@ -17,20 +17,19 @@ Public Class Login
             MsgBox("Username dan Password Kosong")
 
         ElseIf user = "" Then
-            MsgBox("Isi Username!")
+            MsgBox("Isi Username !")
         ElseIf pass = "" Then
-            MsgBox("Isi Password!")
+            MsgBox("Isi Password !")
         Else
-            'Select t1.Kode_User,t2.Type FROM tbl_user t1 INNER JOIN tbl_user_detail t2 On t1.Kode_User = t2.Kode_
-            'user WHERE t1.Nama_User='" & user & "' && t1.Pwd_User ='" & pass & "';"
-            sql = "Select t1.Kode_User,t2.Status_User FROM tbl_user t1 INNER JOIN tbl_user_detail t2 On t1.Kode_User = t2.Kode_User WHERE t1.Nama_User='" & user & "' && t1.Pwd_User ='" & pass & "';"
-            'sql = "SELECT * FROM tbl_user WHERE Nama_User='" & user & "' Pwd_User='" & pass & "'"
+            'sql = "Select t1.Kode_User,t2.Status_User FROM tbl_user t1 INNER JOIN tbl_user_detail t2 On t1.Kode_User = t2.Kode_User WHERE t1.Nama_User='" & user & "' && t1.Pwd_User ='" & pass & "';"
+            sql = "SELECT Kode_User, Status_User FROM tbl_user WHERE Nama_User='" & user & "' && Pwd_User='" & pass & "';"
+            'sql = "SELECT * FROM tbl_user WHERE Nama_User = @nama, Pwd_User = @pwd"
             da = New MySqlDataAdapter(sql, conn)
             da.Fill(rt)
             If rt.Rows.Count > 0 Then
                 id = rt.Rows(0).Item(0)
                 Dim tu As String = rt.Rows(0).Item(1)
-                If tu = "ADMINISTRATOR" Or tu = "USER" Then
+                If tu = "Administrator" Or tu = "User" Then
                     MsgBox("Login Berhasil : " + id)
                     Dim mm = New Main_Menu
                     mm.Show()
@@ -79,4 +78,5 @@ Public Class Login
             Application.Exit()
         End If
     End Sub
+
 End Class
