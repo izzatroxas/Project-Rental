@@ -7,10 +7,10 @@ Public Class User
     Sub Clean()
         kode.Clear()
         nama.Clear()
-        stat.Text = ""
         pass.Clear()
         search.Clear()
         kode.Select()
+        stat.Text = ""
         Call Grid()
         Call Showstat()
     End Sub
@@ -18,9 +18,9 @@ Public Class User
     'Bener Bener Bersih, tapi mending pakai yang Clean soalnya sekalian Call Table dan Combo Box
     Sub Baru()
         nama.Clear()
-        stat.Text = ""
         pass.Clear()
         search.Clear()
+        stat.Text = ""
         nama.Select()
     End Sub
 
@@ -30,6 +30,7 @@ Public Class User
         pass.Text = dr.Item("Pwd_User")
         stat.Text = dr.Item("Status_User")
         nama.Select()
+        ''PP
     End Sub
 
     '
@@ -53,6 +54,7 @@ Public Class User
             dgv.DataSource = ds.Tables(0)
             dgv.ReadOnly = True
         End If
+        ''DGV
     End Sub
 
     'buat Show Status "Administrator" dan "User" nya
@@ -73,16 +75,17 @@ Public Class User
         Call Koneksi()
         Call Clean()
         dr.Close()
+        ''Load
     End Sub
 
     'ini sih biar ga bisa di ketik Combo Box nya
     Private Sub Stat_KeyPress(sender As Object, e As KeyPressEventArgs) Handles stat.KeyPress
-        If ((e.KeyChar >= "0" And e.KeyChar <= "9") And e.KeyChar <> vbBack) Then e.Handled = True
+        If ((e.KeyChar >= "0" And e.KeyChar <= "9") And e.KeyChar <> vbBack) Then e.Handled = True ''can't input
     End Sub
 
     'Buat Refresh atau Back Button
     Private Sub Back_Click(sender As Object, e As EventArgs) Handles back.Click
-        Call Clean()
+        Call Clean() ''Bersih
     End Sub
 
     'Close Button
@@ -92,7 +95,7 @@ Public Class User
 
     'Show Stat nya buat di Lost Focus in
     Private Sub Stat_LostFocus(sender As Object, e As EventArgs) Handles stat.LostFocus
-        stat.Text = UCase(stat.Text)
+        stat.Text = UCase(stat.Text) ''Lost Focus
     End Sub
 
     'Buat Save dan Update Database
@@ -154,10 +157,10 @@ Public Class User
     'Data Grid View nya
     Private Sub Dgv_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgv.CellMouseClick
         On Error Resume Next
-        kode.Text = dgv.Rows(e.RowIndex).Cells(0).Value
-        nama.Text = dgv.Rows(e.RowIndex).Cells(1).Value
-        pass.Text = dgv.Rows(e.RowIndex).Cells(2).Value
-        stat.Text = dgv.Rows(e.RowIndex).Cells(3).Value
+        kode.Text = dgv.Rows(e.RowIndex).Cells(0).Value ''kd
+        nama.Text = dgv.Rows(e.RowIndex).Cells(1).Value ''nm
+        pass.Text = dgv.Rows(e.RowIndex).Cells(2).Value ''pwd
+        stat.Text = dgv.Rows(e.RowIndex).Cells(3).Value ''stt
     End Sub
 
     'DELETE Button
@@ -171,7 +174,7 @@ Public Class User
             del = "DELETE FROM tbl_user WHERE Kode_User='" & kode.Text & "'"
             cmd = New MySqlCommand(del, conn)
             cmd.ExecuteNonQuery()
-            MsgBox("Data berhasil di hapus")
+            MsgBox("Data Berhasil di Hapus !")
             Call Clean()
         Else
             Call Clean()
@@ -192,6 +195,7 @@ Public Class User
             dr.Close()
         End If
         dr.Close()
+        ''Data Reader Close nya kebanyakan, karna bentrok sama connection
     End Sub
 
     'Buat Mencari
@@ -201,5 +205,6 @@ Public Class User
         ds = New DataSet
         da.Fill(ds)
         dgv.DataSource = ds.Tables(0)
+        ''Belum Fix untuk search
     End Sub
 End Class

@@ -31,42 +31,45 @@ Partial Class Pinjam
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.KK = New System.Windows.Forms.ComboBox()
+        Me.jp = New System.Windows.Forms.ComboBox()
+        Me.kode_mob = New System.Windows.Forms.ComboBox()
+        Me.kode_sup = New System.Windows.Forms.ComboBox()
+        Me.rencana = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.lbl_kode_mob = New System.Windows.Forms.Label()
+        Me.lbl_kode_supir = New System.Windows.Forms.Label()
+        Me.durasi = New System.Windows.Forms.ComboBox()
+        Me.jam_ber = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.stts_pem = New System.Windows.Forms.ComboBox()
+        Me.uang_muka = New System.Windows.Forms.TextBox()
+        Me.ktp = New System.Windows.Forms.TextBox()
+        Me.nama = New System.Windows.Forms.TextBox()
+        Me.alamat = New System.Windows.Forms.TextBox()
+        Me.hp = New System.Windows.Forms.TextBox()
+        Me.cbtn = New System.Windows.Forms.Button()
+        Me.bbtn = New System.Windows.Forms.Button()
+        Me.delbtn = New System.Windows.Forms.Button()
+        Me.sbtn = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tgl_ber = New System.Windows.Forms.DateTimePicker()
+        Me.tgl_pin = New System.Windows.Forms.DateTimePicker()
+        Me.lbl_ss_pemb = New System.Windows.Forms.Label()
+        Me.lbl_tot_biaya = New System.Windows.Forms.Label()
+        Me.kode = New System.Windows.Forms.Label()
+        Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.dgv2 = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -157,60 +160,46 @@ Partial Class Pinjam
         Me.Label8.Text = "Tgl - Jam Berangkat"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TextBox1
+        'KK
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.BurlyWood
-        Me.TextBox1.Location = New System.Drawing.Point(142, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox1.TabIndex = 23
+        Me.KK.FormattingEnabled = True
+        Me.KK.Location = New System.Drawing.Point(142, 65)
+        Me.KK.Name = "KK"
+        Me.KK.Size = New System.Drawing.Size(121, 21)
+        Me.KK.TabIndex = 25
         '
-        'ComboBox2
+        'jp
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(142, 65)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 25
+        Me.jp.FormattingEnabled = True
+        Me.jp.Items.AddRange(New Object() {"Sama Supir", "Tanpa Supir"})
+        Me.jp.Location = New System.Drawing.Point(142, 96)
+        Me.jp.Name = "jp"
+        Me.jp.Size = New System.Drawing.Size(121, 21)
+        Me.jp.TabIndex = 26
         '
-        'ComboBox3
+        'kode_mob
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(142, 96)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox3.TabIndex = 26
+        Me.kode_mob.FormattingEnabled = True
+        Me.kode_mob.Location = New System.Drawing.Point(142, 117)
+        Me.kode_mob.Name = "kode_mob"
+        Me.kode_mob.Size = New System.Drawing.Size(121, 21)
+        Me.kode_mob.TabIndex = 27
         '
-        'ComboBox4
+        'kode_sup
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(142, 117)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox4.TabIndex = 27
+        Me.kode_sup.FormattingEnabled = True
+        Me.kode_sup.Location = New System.Drawing.Point(142, 138)
+        Me.kode_sup.Name = "kode_sup"
+        Me.kode_sup.Size = New System.Drawing.Size(121, 21)
+        Me.kode_sup.TabIndex = 28
         '
-        'ComboBox5
+        'rencana
         '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(142, 138)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox5.TabIndex = 28
-        '
-        'ComboBox6
-        '
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(142, 159)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox6.TabIndex = 29
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(142, 179)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(121, 20)
-        Me.DateTimePicker1.TabIndex = 30
+        Me.rencana.FormattingEnabled = True
+        Me.rencana.Location = New System.Drawing.Point(142, 159)
+        Me.rencana.Name = "rencana"
+        Me.rencana.Size = New System.Drawing.Size(121, 21)
+        Me.rencana.TabIndex = 29
         '
         'Label9
         '
@@ -256,47 +245,41 @@ Partial Class Pinjam
         Me.Label12.Text = "No Handphone"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'DateTimePicker2
+        'lbl_kode_mob
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(142, 44)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(121, 20)
-        Me.DateTimePicker2.TabIndex = 35
+        Me.lbl_kode_mob.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbl_kode_mob.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lbl_kode_mob.Location = New System.Drawing.Point(269, 117)
+        Me.lbl_kode_mob.Name = "lbl_kode_mob"
+        Me.lbl_kode_mob.Size = New System.Drawing.Size(121, 21)
+        Me.lbl_kode_mob.TabIndex = 36
+        Me.lbl_kode_mob.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label13
+        'lbl_kode_supir
         '
-        Me.Label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label13.Location = New System.Drawing.Point(269, 117)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(121, 21)
-        Me.Label13.TabIndex = 36
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lbl_kode_supir.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbl_kode_supir.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lbl_kode_supir.Location = New System.Drawing.Point(269, 138)
+        Me.lbl_kode_supir.Name = "lbl_kode_supir"
+        Me.lbl_kode_supir.Size = New System.Drawing.Size(121, 21)
+        Me.lbl_kode_supir.TabIndex = 37
+        Me.lbl_kode_supir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label14
+        'durasi
         '
-        Me.Label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label14.Location = New System.Drawing.Point(269, 138)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(121, 21)
-        Me.Label14.TabIndex = 37
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.durasi.FormattingEnabled = True
+        Me.durasi.Items.AddRange(New Object() {"Jam", "Hari"})
+        Me.durasi.Location = New System.Drawing.Point(269, 159)
+        Me.durasi.Name = "durasi"
+        Me.durasi.Size = New System.Drawing.Size(121, 21)
+        Me.durasi.TabIndex = 38
         '
-        'ComboBox1
+        'jam_ber
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(269, 159)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 38
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(269, 179)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox2.TabIndex = 39
+        Me.jam_ber.Location = New System.Drawing.Point(269, 179)
+        Me.jam_ber.Name = "jam_ber"
+        Me.jam_ber.Size = New System.Drawing.Size(121, 20)
+        Me.jam_ber.TabIndex = 39
         '
         'Label15
         '
@@ -342,112 +325,97 @@ Partial Class Pinjam
         Me.Label18.Text = "Status Peminjaman"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TextBox3
+        'stts_pem
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.BurlyWood
-        Me.TextBox3.Location = New System.Drawing.Point(523, 117)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox3.TabIndex = 44
+        Me.stts_pem.FormattingEnabled = True
+        Me.stts_pem.Items.AddRange(New Object() {"Jalan", "Tidak Jalan"})
+        Me.stts_pem.Location = New System.Drawing.Point(523, 180)
+        Me.stts_pem.Name = "stts_pem"
+        Me.stts_pem.Size = New System.Drawing.Size(121, 21)
+        Me.stts_pem.TabIndex = 46
         '
-        'TextBox4
+        'uang_muka
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.BurlyWood
-        Me.TextBox4.Location = New System.Drawing.Point(523, 160)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox4.TabIndex = 45
+        Me.uang_muka.Location = New System.Drawing.Point(523, 138)
+        Me.uang_muka.Name = "uang_muka"
+        Me.uang_muka.Size = New System.Drawing.Size(121, 20)
+        Me.uang_muka.TabIndex = 47
         '
-        'ComboBox7
+        'ktp
         '
-        Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Location = New System.Drawing.Point(523, 180)
-        Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox7.TabIndex = 46
+        Me.ktp.Location = New System.Drawing.Point(396, 23)
+        Me.ktp.Name = "ktp"
+        Me.ktp.Size = New System.Drawing.Size(248, 20)
+        Me.ktp.TabIndex = 48
         '
-        'TextBox5
+        'nama
         '
-        Me.TextBox5.Location = New System.Drawing.Point(523, 138)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox5.TabIndex = 47
+        Me.nama.Location = New System.Drawing.Point(396, 44)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(248, 20)
+        Me.nama.TabIndex = 49
         '
-        'TextBox6
+        'alamat
         '
-        Me.TextBox6.Location = New System.Drawing.Point(396, 23)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(248, 20)
-        Me.TextBox6.TabIndex = 48
+        Me.alamat.Location = New System.Drawing.Point(396, 65)
+        Me.alamat.Name = "alamat"
+        Me.alamat.Size = New System.Drawing.Size(248, 20)
+        Me.alamat.TabIndex = 50
         '
-        'TextBox7
+        'hp
         '
-        Me.TextBox7.Location = New System.Drawing.Point(396, 44)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(248, 20)
-        Me.TextBox7.TabIndex = 49
+        Me.hp.Location = New System.Drawing.Point(396, 86)
+        Me.hp.Name = "hp"
+        Me.hp.Size = New System.Drawing.Size(248, 20)
+        Me.hp.TabIndex = 51
         '
-        'TextBox8
+        'cbtn
         '
-        Me.TextBox8.Location = New System.Drawing.Point(396, 65)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(248, 20)
-        Me.TextBox8.TabIndex = 50
+        Me.cbtn.Image = CType(resources.GetObject("cbtn.Image"), System.Drawing.Image)
+        Me.cbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cbtn.Location = New System.Drawing.Point(581, 228)
+        Me.cbtn.Name = "cbtn"
+        Me.cbtn.Size = New System.Drawing.Size(59, 25)
+        Me.cbtn.TabIndex = 55
+        Me.cbtn.Text = "Close"
+        Me.cbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cbtn.UseVisualStyleBackColor = True
         '
-        'TextBox9
+        'bbtn
         '
-        Me.TextBox9.Location = New System.Drawing.Point(396, 86)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(248, 20)
-        Me.TextBox9.TabIndex = 51
+        Me.bbtn.Image = CType(resources.GetObject("bbtn.Image"), System.Drawing.Image)
+        Me.bbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bbtn.Location = New System.Drawing.Point(518, 228)
+        Me.bbtn.Name = "bbtn"
+        Me.bbtn.Size = New System.Drawing.Size(57, 25)
+        Me.bbtn.TabIndex = 54
+        Me.bbtn.Text = "Back"
+        Me.bbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.bbtn.UseVisualStyleBackColor = True
         '
-        'Button4
+        'delbtn
         '
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(581, 228)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(59, 25)
-        Me.Button4.TabIndex = 55
-        Me.Button4.Text = "Close"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.delbtn.Image = CType(resources.GetObject("delbtn.Image"), System.Drawing.Image)
+        Me.delbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.delbtn.Location = New System.Drawing.Point(448, 228)
+        Me.delbtn.Name = "delbtn"
+        Me.delbtn.Size = New System.Drawing.Size(64, 25)
+        Me.delbtn.TabIndex = 53
+        Me.delbtn.Text = "Delete"
+        Me.delbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.delbtn.UseVisualStyleBackColor = True
         '
-        'Button3
+        'sbtn
         '
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(518, 228)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(57, 25)
-        Me.Button3.TabIndex = 54
-        Me.Button3.Text = "Back"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(448, 228)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 25)
-        Me.Button2.TabIndex = 53
-        Me.Button2.Text = "Delete"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(383, 228)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(59, 26)
-        Me.Button1.TabIndex = 52
-        Me.Button1.Text = "Save"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.sbtn.Image = CType(resources.GetObject("sbtn.Image"), System.Drawing.Image)
+        Me.sbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.sbtn.Location = New System.Drawing.Point(383, 228)
+        Me.sbtn.Name = "sbtn"
+        Me.sbtn.Size = New System.Drawing.Size(59, 26)
+        Me.sbtn.TabIndex = 52
+        Me.sbtn.Text = "Save"
+        Me.sbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.sbtn.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -459,60 +427,113 @@ Partial Class Pinjam
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.tgl_ber)
+        Me.GroupBox1.Controls.Add(Me.tgl_pin)
+        Me.GroupBox1.Controls.Add(Me.lbl_ss_pemb)
+        Me.GroupBox1.Controls.Add(Me.lbl_tot_biaya)
+        Me.GroupBox1.Controls.Add(Me.kode)
         Me.GroupBox1.Location = New System.Drawing.Point(-8, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(676, 270)
         Me.GroupBox1.TabIndex = 57
         Me.GroupBox1.TabStop = False
         '
-        'DataGridView1
+        'tgl_ber
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(8, 279)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(647, 211)
-        Me.DataGridView1.TabIndex = 58
+        Me.tgl_ber.Location = New System.Drawing.Point(150, 177)
+        Me.tgl_ber.Name = "tgl_ber"
+        Me.tgl_ber.Size = New System.Drawing.Size(121, 20)
+        Me.tgl_ber.TabIndex = 61
+        '
+        'tgl_pin
+        '
+        Me.tgl_pin.Location = New System.Drawing.Point(150, 40)
+        Me.tgl_pin.Name = "tgl_pin"
+        Me.tgl_pin.Size = New System.Drawing.Size(121, 20)
+        Me.tgl_pin.TabIndex = 60
+        '
+        'lbl_ss_pemb
+        '
+        Me.lbl_ss_pemb.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbl_ss_pemb.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lbl_ss_pemb.Location = New System.Drawing.Point(531, 158)
+        Me.lbl_ss_pemb.Name = "lbl_ss_pemb"
+        Me.lbl_ss_pemb.Size = New System.Drawing.Size(121, 21)
+        Me.lbl_ss_pemb.TabIndex = 59
+        Me.lbl_ss_pemb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lbl_tot_biaya
+        '
+        Me.lbl_tot_biaya.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbl_tot_biaya.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lbl_tot_biaya.Location = New System.Drawing.Point(531, 113)
+        Me.lbl_tot_biaya.Name = "lbl_tot_biaya"
+        Me.lbl_tot_biaya.Size = New System.Drawing.Size(121, 21)
+        Me.lbl_tot_biaya.TabIndex = 59
+        Me.lbl_tot_biaya.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'kode
+        '
+        Me.kode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.kode.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.kode.Location = New System.Drawing.Point(150, 19)
+        Me.kode.Name = "kode"
+        Me.kode.Size = New System.Drawing.Size(121, 21)
+        Me.kode.TabIndex = 59
+        Me.kode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'dgv
+        '
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Location = New System.Drawing.Point(8, 379)
+        Me.dgv.Name = "dgv"
+        Me.dgv.Size = New System.Drawing.Size(647, 211)
+        Me.dgv.TabIndex = 58
+        '
+        'dgv2
+        '
+        Me.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv2.Location = New System.Drawing.Point(11, 279)
+        Me.dgv2.Name = "dgv2"
+        Me.dgv2.Size = New System.Drawing.Size(645, 77)
+        Me.dgv2.TabIndex = 59
         '
         'Pinjam
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.BurlyWood
-        Me.ClientSize = New System.Drawing.Size(662, 493)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(662, 592)
+        Me.Controls.Add(Me.dgv2)
+        Me.Controls.Add(Me.dgv)
+        Me.Controls.Add(Me.cbtn)
+        Me.Controls.Add(Me.bbtn)
+        Me.Controls.Add(Me.delbtn)
+        Me.Controls.Add(Me.sbtn)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.TextBox9)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.ComboBox7)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.hp)
+        Me.Controls.Add(Me.alamat)
+        Me.Controls.Add(Me.nama)
+        Me.Controls.Add(Me.ktp)
+        Me.Controls.Add(Me.uang_muka)
+        Me.Controls.Add(Me.stts_pem)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.DateTimePicker2)
+        Me.Controls.Add(Me.jam_ber)
+        Me.Controls.Add(Me.durasi)
+        Me.Controls.Add(Me.lbl_kode_supir)
+        Me.Controls.Add(Me.lbl_kode_mob)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.ComboBox6)
-        Me.Controls.Add(Me.ComboBox5)
-        Me.Controls.Add(Me.ComboBox4)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.rencana)
+        Me.Controls.Add(Me.kode_sup)
+        Me.Controls.Add(Me.kode_mob)
+        Me.Controls.Add(Me.jp)
+        Me.Controls.Add(Me.KK)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -527,7 +548,9 @@ Partial Class Pinjam
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pinjam"
         Me.Text = "Pinjam"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -541,39 +564,40 @@ Partial Class Pinjam
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents ComboBox4 As ComboBox
-    Friend WithEvents ComboBox5 As ComboBox
-    Friend WithEvents ComboBox6 As ComboBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents KK As ComboBox
+    Friend WithEvents jp As ComboBox
+    Friend WithEvents kode_mob As ComboBox
+    Friend WithEvents kode_sup As ComboBox
+    Friend WithEvents rencana As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents lbl_kode_mob As Label
+    Friend WithEvents lbl_kode_supir As Label
+    Friend WithEvents durasi As ComboBox
+    Friend WithEvents jam_ber As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents ComboBox7 As ComboBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents stts_pem As ComboBox
+    Friend WithEvents uang_muka As TextBox
+    Friend WithEvents ktp As TextBox
+    Friend WithEvents nama As TextBox
+    Friend WithEvents alamat As TextBox
+    Friend WithEvents hp As TextBox
+    Friend WithEvents cbtn As Button
+    Friend WithEvents bbtn As Button
+    Friend WithEvents delbtn As Button
+    Friend WithEvents sbtn As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv As DataGridView
+    Friend WithEvents lbl_ss_pemb As Label
+    Friend WithEvents lbl_tot_biaya As Label
+    Friend WithEvents kode As Label
+    Friend WithEvents tgl_ber As DateTimePicker
+    Friend WithEvents tgl_pin As DateTimePicker
+    Friend WithEvents dgv2 As DataGridView
 End Class

@@ -26,19 +26,21 @@ Partial Class Supir
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.nama = New System.Windows.Forms.TextBox()
+        Me.alamat = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.telf = New System.Windows.Forms.TextBox()
+        Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.sbtn = New System.Windows.Forms.Button()
+        Me.delbtn = New System.Windows.Forms.Button()
+        Me.cbtn = New System.Windows.Forms.Button()
+        Me.backbtn = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cari = New System.Windows.Forms.TextBox()
+        Me.kode = New System.Windows.Forms.TextBox()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,19 +71,19 @@ Partial Class Supir
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Alamat"
         '
-        'TextBox2
+        'nama
         '
-        Me.TextBox2.Location = New System.Drawing.Point(90, 47)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(341, 20)
-        Me.TextBox2.TabIndex = 4
+        Me.nama.Location = New System.Drawing.Point(90, 47)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(341, 20)
+        Me.nama.TabIndex = 4
         '
-        'TextBox3
+        'alamat
         '
-        Me.TextBox3.Location = New System.Drawing.Point(90, 74)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(133, 20)
-        Me.TextBox3.TabIndex = 5
+        Me.alamat.Location = New System.Drawing.Point(90, 74)
+        Me.alamat.Name = "alamat"
+        Me.alamat.Size = New System.Drawing.Size(133, 20)
+        Me.alamat.TabIndex = 5
         '
         'Label4
         '
@@ -92,68 +94,68 @@ Partial Class Supir
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Telf / HP"
         '
-        'TextBox4
+        'telf
         '
-        Me.TextBox4.Location = New System.Drawing.Point(275, 66)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(144, 20)
-        Me.TextBox4.TabIndex = 7
+        Me.telf.Location = New System.Drawing.Point(275, 66)
+        Me.telf.Name = "telf"
+        Me.telf.Size = New System.Drawing.Size(144, 20)
+        Me.telf.TabIndex = 7
         '
-        'DataGridView1
+        'dgv
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(5, 154)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(454, 167)
-        Me.DataGridView1.TabIndex = 8
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Location = New System.Drawing.Point(5, 154)
+        Me.dgv.Name = "dgv"
+        Me.dgv.Size = New System.Drawing.Size(454, 167)
+        Me.dgv.TabIndex = 8
         '
-        'Button1
+        'sbtn
         '
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(197, 117)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(59, 26)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Save"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.sbtn.Image = CType(resources.GetObject("sbtn.Image"), System.Drawing.Image)
+        Me.sbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.sbtn.Location = New System.Drawing.Point(197, 117)
+        Me.sbtn.Name = "sbtn"
+        Me.sbtn.Size = New System.Drawing.Size(59, 26)
+        Me.sbtn.TabIndex = 10
+        Me.sbtn.Text = "Save"
+        Me.sbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.sbtn.UseVisualStyleBackColor = True
         '
-        'Button2
+        'delbtn
         '
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(262, 118)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 25)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Delete"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.delbtn.Image = CType(resources.GetObject("delbtn.Image"), System.Drawing.Image)
+        Me.delbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.delbtn.Location = New System.Drawing.Point(262, 118)
+        Me.delbtn.Name = "delbtn"
+        Me.delbtn.Size = New System.Drawing.Size(64, 25)
+        Me.delbtn.TabIndex = 11
+        Me.delbtn.Text = "Delete"
+        Me.delbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.delbtn.UseVisualStyleBackColor = True
         '
-        'Button4
+        'cbtn
         '
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(395, 118)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(59, 25)
-        Me.Button4.TabIndex = 14
-        Me.Button4.Text = "Close"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.cbtn.Image = CType(resources.GetObject("cbtn.Image"), System.Drawing.Image)
+        Me.cbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cbtn.Location = New System.Drawing.Point(395, 118)
+        Me.cbtn.Name = "cbtn"
+        Me.cbtn.Size = New System.Drawing.Size(59, 25)
+        Me.cbtn.TabIndex = 14
+        Me.cbtn.Text = "Close"
+        Me.cbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cbtn.UseVisualStyleBackColor = True
         '
-        'Button3
+        'backbtn
         '
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(332, 118)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(57, 25)
-        Me.Button3.TabIndex = 13
-        Me.Button3.Text = "Back"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.backbtn.Image = CType(resources.GetObject("backbtn.Image"), System.Drawing.Image)
+        Me.backbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.backbtn.Location = New System.Drawing.Point(332, 118)
+        Me.backbtn.Name = "backbtn"
+        Me.backbtn.Size = New System.Drawing.Size(57, 25)
+        Me.backbtn.TabIndex = 13
+        Me.backbtn.Text = "Back"
+        Me.backbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.backbtn.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -165,20 +167,38 @@ Partial Class Supir
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.cari)
+        Me.GroupBox1.Controls.Add(Me.kode)
+        Me.GroupBox1.Controls.Add(Me.telf)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 9)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(442, 95)
         Me.GroupBox1.TabIndex = 23
         Me.GroupBox1.TabStop = False
         '
-        'TextBox1
+        'Label5
         '
-        Me.TextBox1.Location = New System.Drawing.Point(79, 11)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(133, 20)
-        Me.TextBox1.TabIndex = 24
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(219, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(41, 13)
+        Me.Label5.TabIndex = 26
+        Me.Label5.Text = "Search"
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(275, 11)
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(144, 20)
+        Me.cari.TabIndex = 25
+        '
+        'kode
+        '
+        Me.kode.Location = New System.Drawing.Point(79, 11)
+        Me.kode.Name = "kode"
+        Me.kode.Size = New System.Drawing.Size(133, 20)
+        Me.kode.TabIndex = 24
         '
         'Supir
         '
@@ -186,14 +206,14 @@ Partial Class Supir
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.BurlyWood
         Me.ClientSize = New System.Drawing.Size(463, 321)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.cbtn)
+        Me.Controls.Add(Me.backbtn)
+        Me.Controls.Add(Me.delbtn)
+        Me.Controls.Add(Me.sbtn)
+        Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.alamat)
+        Me.Controls.Add(Me.nama)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -203,7 +223,7 @@ Partial Class Supir
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Supir"
         Me.Text = "Supir"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -214,16 +234,18 @@ Partial Class Supir
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents nama As TextBox
+    Friend WithEvents alamat As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents telf As TextBox
+    Friend WithEvents dgv As DataGridView
+    Friend WithEvents sbtn As Button
+    Friend WithEvents delbtn As Button
+    Friend WithEvents cbtn As Button
+    Friend WithEvents backbtn As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents kode As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cari As TextBox
 End Class

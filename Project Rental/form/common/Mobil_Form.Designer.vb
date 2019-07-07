@@ -27,22 +27,25 @@ Partial Class Mobil
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.kode = New System.Windows.Forms.TextBox()
+        Me.nama = New System.Windows.Forms.TextBox()
+        Me.tmpj = New System.Windows.Forms.TextBox()
+        Me.tmph = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.tspj = New System.Windows.Forms.TextBox()
+        Me.tsph = New System.Windows.Forms.TextBox()
+        Me.cbtn = New System.Windows.Forms.Button()
+        Me.bbtn = New System.Windows.Forms.Button()
+        Me.delbtn = New System.Windows.Forms.Button()
+        Me.sbtn = New System.Windows.Forms.Button()
+        Me.dgv = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cari = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -81,33 +84,33 @@ Partial Class Mobil
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Tarif Mobil Per Hari"
         '
-        'TextBox1
+        'kode
         '
-        Me.TextBox1.Location = New System.Drawing.Point(115, 16)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox1.TabIndex = 4
+        Me.kode.Location = New System.Drawing.Point(115, 16)
+        Me.kode.Name = "kode"
+        Me.kode.Size = New System.Drawing.Size(114, 20)
+        Me.kode.TabIndex = 4
         '
-        'TextBox2
+        'nama
         '
-        Me.TextBox2.Location = New System.Drawing.Point(115, 42)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(336, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.nama.Location = New System.Drawing.Point(115, 42)
+        Me.nama.Name = "nama"
+        Me.nama.Size = New System.Drawing.Size(336, 20)
+        Me.nama.TabIndex = 5
         '
-        'TextBox3
+        'tmpj
         '
-        Me.TextBox3.Location = New System.Drawing.Point(115, 69)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox3.TabIndex = 6
+        Me.tmpj.Location = New System.Drawing.Point(115, 69)
+        Me.tmpj.Name = "tmpj"
+        Me.tmpj.Size = New System.Drawing.Size(114, 20)
+        Me.tmpj.TabIndex = 6
         '
-        'TextBox4
+        'tmph
         '
-        Me.TextBox4.Location = New System.Drawing.Point(115, 95)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox4.TabIndex = 7
+        Me.tmph.Location = New System.Drawing.Point(115, 95)
+        Me.tmph.Name = "tmph"
+        Me.tmph.Size = New System.Drawing.Size(114, 20)
+        Me.tmph.TabIndex = 7
         '
         'Label5
         '
@@ -127,83 +130,101 @@ Partial Class Mobil
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Tarif Supir Per Hari"
         '
-        'TextBox5
+        'tspj
         '
-        Me.TextBox5.Location = New System.Drawing.Point(337, 68)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox5.TabIndex = 10
+        Me.tspj.Location = New System.Drawing.Point(337, 68)
+        Me.tspj.Name = "tspj"
+        Me.tspj.Size = New System.Drawing.Size(114, 20)
+        Me.tspj.TabIndex = 10
         '
-        'TextBox6
+        'tsph
         '
-        Me.TextBox6.Location = New System.Drawing.Point(337, 94)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(114, 20)
-        Me.TextBox6.TabIndex = 11
+        Me.tsph.Location = New System.Drawing.Point(337, 94)
+        Me.tsph.Name = "tsph"
+        Me.tsph.Size = New System.Drawing.Size(114, 20)
+        Me.tsph.TabIndex = 11
         '
-        'Button4
+        'cbtn
         '
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(395, 135)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(59, 25)
-        Me.Button4.TabIndex = 18
-        Me.Button4.Text = "Close"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.cbtn.Image = CType(resources.GetObject("cbtn.Image"), System.Drawing.Image)
+        Me.cbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cbtn.Location = New System.Drawing.Point(395, 135)
+        Me.cbtn.Name = "cbtn"
+        Me.cbtn.Size = New System.Drawing.Size(59, 25)
+        Me.cbtn.TabIndex = 18
+        Me.cbtn.Text = "Close"
+        Me.cbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cbtn.UseVisualStyleBackColor = True
         '
-        'Button3
+        'bbtn
         '
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(332, 135)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(57, 25)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "Back"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.bbtn.Image = CType(resources.GetObject("bbtn.Image"), System.Drawing.Image)
+        Me.bbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bbtn.Location = New System.Drawing.Point(332, 135)
+        Me.bbtn.Name = "bbtn"
+        Me.bbtn.Size = New System.Drawing.Size(57, 25)
+        Me.bbtn.TabIndex = 17
+        Me.bbtn.Text = "Back"
+        Me.bbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.bbtn.UseVisualStyleBackColor = True
         '
-        'Button2
+        'delbtn
         '
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(262, 135)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 25)
-        Me.Button2.TabIndex = 16
-        Me.Button2.Text = "Delete"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.delbtn.Image = CType(resources.GetObject("delbtn.Image"), System.Drawing.Image)
+        Me.delbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.delbtn.Location = New System.Drawing.Point(262, 135)
+        Me.delbtn.Name = "delbtn"
+        Me.delbtn.Size = New System.Drawing.Size(64, 25)
+        Me.delbtn.TabIndex = 16
+        Me.delbtn.Text = "Delete"
+        Me.delbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.delbtn.UseVisualStyleBackColor = True
         '
-        'Button1
+        'sbtn
         '
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(197, 134)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(59, 26)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Save"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.sbtn.Image = CType(resources.GetObject("sbtn.Image"), System.Drawing.Image)
+        Me.sbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.sbtn.Location = New System.Drawing.Point(197, 134)
+        Me.sbtn.Name = "sbtn"
+        Me.sbtn.Size = New System.Drawing.Size(59, 26)
+        Me.sbtn.TabIndex = 15
+        Me.sbtn.Text = "Save"
+        Me.sbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.sbtn.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgv
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(7, 173)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(452, 157)
-        Me.DataGridView1.TabIndex = 19
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Location = New System.Drawing.Point(7, 173)
+        Me.dgv.Name = "dgv"
+        Me.dgv.Size = New System.Drawing.Size(452, 157)
+        Me.dgv.TabIndex = 19
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.cari)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 1)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(453, 120)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(229, 18)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(41, 13)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Search"
+        '
+        'cari
+        '
+        Me.cari.Location = New System.Drawing.Point(276, 16)
+        Me.cari.Name = "cari"
+        Me.cari.Size = New System.Drawing.Size(169, 20)
+        Me.cari.TabIndex = 0
         '
         'GroupBox2
         '
@@ -219,19 +240,19 @@ Partial Class Mobil
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.BurlyWood
         Me.ClientSize = New System.Drawing.Size(463, 329)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.dgv)
+        Me.Controls.Add(Me.cbtn)
+        Me.Controls.Add(Me.bbtn)
+        Me.Controls.Add(Me.delbtn)
+        Me.Controls.Add(Me.sbtn)
+        Me.Controls.Add(Me.tsph)
+        Me.Controls.Add(Me.tspj)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tmph)
+        Me.Controls.Add(Me.tmpj)
+        Me.Controls.Add(Me.nama)
+        Me.Controls.Add(Me.kode)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -242,7 +263,9 @@ Partial Class Mobil
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Mobil"
         Me.Text = "Mobil"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,19 +275,21 @@ Partial Class Mobil
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents kode As TextBox
+    Friend WithEvents nama As TextBox
+    Friend WithEvents tmpj As TextBox
+    Friend WithEvents tmph As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents tspj As TextBox
+    Friend WithEvents tsph As TextBox
+    Friend WithEvents cbtn As Button
+    Friend WithEvents bbtn As Button
+    Friend WithEvents delbtn As Button
+    Friend WithEvents sbtn As Button
+    Friend WithEvents dgv As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents cari As TextBox
 End Class
