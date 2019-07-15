@@ -4,15 +4,17 @@ Public Class Pinjam
 
     Sub Idpin()
         sql = "SELECT Kode_Pinjam FROM tbl_pinjam ORDER BY Kode_Pinjam DESC"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
-        If Not dr.HasRows Then
+        ''cmd = New MySqlCommand(sql, conn)
+        ''dr = cmd.ExecuteReader
+        ''dr.Read()
+        Dim ds As New DataSet
+        ds = Sql_dataset(sql)
+        ''If Not dr.HasRows Then
+        If ds.Tables(0).Rows.Count = 0 Then
             kode.Text = "A0001"
         Else
             kode.Text = "A" + Format(Microsoft.VisualBasic.Right(dr.Item("Kode_Pinjam"), 4) + 1, "0000")
         End If
-        dr.Close()
     End Sub
 
     Sub Clean()
@@ -34,6 +36,7 @@ Public Class Pinjam
         rencana.Text = ""
         durasi.Text = ""
         stts_pem.Text = ""
+        dgv2.Columns.Clear()
     End Sub
 
     Sub Found()
@@ -58,19 +61,24 @@ Public Class Pinjam
 
         'TABLE SUPIR
         sql = "SELECT * FROM tbl_supir WHERE Kode_Supir='" & lbl_kode_supir.Text & "'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
+        ''cmd = New MySqlCommand(sql, conn)
+        ''dr = cmd.ExecuteReader
+        ''dr.Read()
+        Dim ds As New DataSet
+        ds = Sql_dataset(sql)
+        If ds.Tables(0).Rows.Count = 0 Then
             kode_sup = dr("Nama_Supir")
         End If
 
         'TABLE MOBIL
         sql = "SELECT * FROM tbl_mobil WHERE Kode_Mobil='" & lbl_kode_mob.Text & "'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
+        ''cmd = New MySqlCommand(sql, conn)
+        ''dr = cmd.ExecuteReader
+        ''dr.Read()
+        ''If dr.HasRows Then
+        Dim da As New DataSet
+        da = Sql_dataset(sql)
+        If da.Tables(0).Rows.Count = 0 Then
             kode_mob = dr("Nama_Mobil")
         End If
 
@@ -103,9 +111,8 @@ Public Class Pinjam
 
     Sub Searchkodepinjam()
         sql = "SELECT * FROM tbl_pinjam WHERE Kode_Pinjam='" & kode.Text & "'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
+        Dim ds As New DataSet
+        ds = Sql_dataset(sql)
     End Sub
 
     Sub Grid()
@@ -127,22 +134,26 @@ Public Class Pinjam
 
     Sub Smobil()
         sql = "SELECT * FROM tbl_mobil WHERE Status_Mobil='Ada'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
+        ''cmd = New MySqlCommand(sql, conn)
+        ''dr = cmd.ExecuteReader
+        Dim ds As New DataSet
+        ds = Sql_dataset(sql)
         kode_mob.Items.Clear()
         Do While dr.Read
             kode_mob.Items.Add(dr.Item(1))
         Loop
+        dr.Close()
     End Sub
 
     Sub Ssupir()
         sql = "SELECT * FROM tbl_supir WHERE Status_Supir='Ada'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
+        Dim ds As New DataSet
+        ds = Sql_dataset(sql)
         kode_sup.Items.Clear()
         Do While dr.Read
             kode_sup.Items.Add(dr.Item(1))
         Loop
+        dr.Close()
     End Sub
 
     Sub SLP()
@@ -155,9 +166,9 @@ Public Class Pinjam
         sql = "SELECT tbl_mobil.Kode_Mobil, Nama_Mobil, Status_Mobil, tbl_pinjam.Tanggal_Berangkat FROM tbl_mobil LEFT JOIN tbl_pinjam ON tbl_mobil.Kode_Mobil = tbl_pinjam.Kode_Mobil"
         ds = Sql_dataset(sql)
         If ds.Tables.Count > 0 Then
-            dgv2.DataSource = ds.Tables(0)
-            dgv2.ReadOnly = True
-            dgv2.Columns(4).DefaultCellStyle.Format = "HH:MM"
+            dgv3.DataSource = ds.Tables(0)
+            dgv3.ReadOnly = True
+            dgv3.Columns(4).DefaultCellStyle.Format = "HH:MM"
         End If
     End Sub
     Private Sub Pinjam_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -181,23 +192,26 @@ Public Class Pinjam
 
     Private Sub Kode_mob_SelectedIndexChanged(sender As Object, e As EventArgs) Handles kode_mob.SelectedIndexChanged
         sql = "SELECT * FROM tbl_mobil WHERE Nama_Mobil='" & kode_mob.Text & "'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
+        'cmd = New MySqlCommand(sql, conn)
+        'dr = cmd.ExecuteReader
+        'dr.Read()
+        'If dr.HasRows Then
+        Dim ds As New DataSet
+        ds = Sql_dataset(sql)
+        If ds.Tables(0).Rows.Count > 0 Then
             lbl_kode_mob.Text = dr.Item(0)
         End If
 
         On Error Resume Next
 
         If durasi.Text = "Jam" And kode_sup.Text = "" Then
-            lbl_tot_biaya.Text = Val(rencana.Text) * dgv.Rows(0).Cells(2).Value
+            lbl_tot_biaya.Text = Val(rencana.Text) * dgv2.Rows(0).Cells(2).Value
         ElseIf durasi.Text = "Jam" And kode_sup.Text <> "" Then
-            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv.Rows(0).Cells(2).Value) + (Val(rencana.Text) * dgv.Rows(0).Cells(4).Value)
+            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv2.Rows(0).Cells(2).Value) + (Val(rencana.Text) * dgv2.Rows(0).Cells(4).Value)
         ElseIf durasi.Text = "Hari" And kode_sup.Text = "" Then
-            lbl_tot_biaya.Text = Val(rencana.Text) * dgv.Rows(0).Cells(3).Value
+            lbl_tot_biaya.Text = Val(rencana.Text) * dgv2.Rows(0).Cells(3).Value
         ElseIf durasi.Text = "Hari" And kode_sup.Text <> "" Then
-            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv.Rows(0).Cells(3).Value) + (Val(rencana.Text) * dgv.Rows(0).Cells(5).Value)
+            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv2.Rows(0).Cells(3).Value) + (Val(rencana.Text) * dgv2.Rows(0).Cells(5).Value)
         End If
     End Sub
 
@@ -212,22 +226,25 @@ Public Class Pinjam
 
     Private Sub Kode_sup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles kode_sup.SelectedIndexChanged
         sql = "SELECT * FROM tbl_supir WHERE Nama_Supir='" & kode_sup.Text & "'"
-        cmd = New MySqlCommand(sql, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
+        '' cmd = New MySqlCommand(sql, conn)
+        ''dr = cmd.ExecuteReader
+        ''dr.Read()
+        ''If dr.HasRows Then
+        Dim ds As New DataSet
+        ds = Sql_dataset(sql)
+        If ds.Tables(0).Rows.Count > 0 Then
             lbl_kode_supir.Text = dr.Item(0)
         End If
 
         'On Error Resume Next
         If durasi.Text = "Jam" And kode_sup.Text = "" Then
-            lbl_tot_biaya.Text = Val(rencana.Text) * dgv.Rows(0).Cells(2).Value
+            lbl_tot_biaya.Text = Val(rencana.Text) * dgv2.Rows(0).Cells(2).Value
         ElseIf durasi.Text = "Jam" And kode_sup.Text <> "" Then
-            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv.Rows(0).Cells(2).Value) + (Val(rencana.Text) * dgv.Rows(0).Cells(4).Value)
+            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv2.Rows(0).Cells(2).Value) + (Val(rencana.Text) * dgv2.Rows(0).Cells(4).Value)
         ElseIf durasi.Text = "Hari" And kode_sup.Text = "" Then
-            lbl_tot_biaya.Text = Val(rencana.Text) * dgv.Rows(0).Cells(3).Value
+            lbl_tot_biaya.Text = Val(rencana.Text) * dgv2.Rows(0).Cells(3).Value
         ElseIf durasi.Text = "Hari" And kode_sup.Text <> "" Then
-            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv.Rows(0).Cells(3).Value) + (Val(rencana.Text) * dgv.Rows(0).Cells(5).Value)
+            lbl_tot_biaya.Text = (Val(rencana.Text) * dgv2.Rows(0).Cells(3).Value) + (Val(rencana.Text) * dgv2.Rows(0).Cells(5).Value)
         End If
     End Sub
 
@@ -285,22 +302,28 @@ Public Class Pinjam
     Private Sub Kktp_KeyDown(sender As Object, e As KeyEventArgs) Handles ktp.KeyDown
         If e.KeyCode = Keys.Enter Then
             sql = "SELECT * FROM tbl_pinjam WHERE KTP='" & ktp.Text & "'"
-            dr = cmd.ExecuteReader
-            dr.Read()
-            If dr.HasRows Then
+            ''dr = cmd.ExecuteReader
+            ''dr.Read()
+            ''If dr.HasRows Then
+            Dim ds As New DataSet
+            ds = Sql_dataset(sql)
+            If ds.Tables(0).Rows.Count = 0 Then
                 Call FoundKTP()
             End If
         End If
     End Sub
 
-    Private Sub Sstts_pem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles stts_pem.SelectedIndexChanged
+    Private Sub Stts_pem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles stts_pem.SelectedIndexChanged
         If stts_pem.Text = "Booking" Then
-            sql = "SELECT * FROM tbl_pinjam WHERE cdate(Tanggal_Pinjam)='" & tgl_pin.Text & "' AND Kode_Mobil='" & lbl_kode_mob.Text & "'"
-            cmd = New MySqlCommand(sql, conn)
-            dr = cmd.ExecuteReader
-            dr.Read()
-            If dr.HasRows Then
-                MsgBox("Booking Tidak Tersidia")
+            sql = "SELECT * FROM tbl_pinjam WHERE cdate(Tanggal_Pinjam)='" & tgl_pin.Value & "' AND Kode_Mobil='" & lbl_kode_mob.Text & "'"
+            ''cmd = New MySqlCommand(sql, conn)
+            ''dr = cmd.ExecuteReader
+            ''dr.Read()
+            ''If dr.HasRows Then
+            Dim ds As New DataSet
+            ds = Sql_dataset(sql)
+            If ds.Tables(0).Rows.Count > 0 Then
+                MsgBox("Booking Tidak Tersedia")
             End If
         End If
     End Sub
@@ -328,18 +351,58 @@ Public Class Pinjam
         cmd = New MySqlCommand(sql, conn)
         ds = Sql_dataset(sql)
         If ds.Tables.Count > 0 Then
-            dgv.DataSource = ds.Tables(0)
-            dgv.ReadOnly = True
+            dgv2.DataSource = ds.Tables(0)
+            dgv2.ReadOnly = True
 
-            dgv.Columns(2).DefaultCellStyle.Format = "##, 0"
-            dgv.Columns(3).DefaultCellStyle.Format = "##, 0"
-            dgv.Columns(4).DefaultCellStyle.Format = "##, 0"
-            dgv.Columns(5).DefaultCellStyle.Format = "##, 0"
+            dgv2.Columns(2).DefaultCellStyle.Format = "##, 0"
+            dgv2.Columns(3).DefaultCellStyle.Format = "##, 0"
+            dgv2.Columns(4).DefaultCellStyle.Format = "##, 0"
+            dgv2.Columns(5).DefaultCellStyle.Format = "##, 0"
         End If
     End Sub
 
-    Private Sub Ssbtn_click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Sbtn_click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Try
 
+            sql = "SELECT * FROM tbl_pinjam WHERE Kode_Pinjam='" & kode.Text & "'"
+            Dim ds As New DataSet
+            ds = Sql_dataset(sql)
+            ''cmd = New MySqlCommand(sql, conn)
+            ''dr = cmd.ExecuteReader
+            ''dr.Read()
+            ''Try
+            ''If Not dr.HasRows Then
+            If ds.Tables(0).Rows.Count = 0 Then
+                Dim save As String
+                ''"SELECT Kode_Pinjam, Tanggal_Pinjam, Nama_Customer, Kode_Mobil, Total_Biaya, Uang_Muka FROM tbl_pinjam"
+                save = "INSERT INTO tbl_pinjam (Kode_Pinjam, Tanggal_Pinjam, Nama_Customer, Kode_Mobil, Total_Biaya, Uang_Muka) VALUES (@kode, @tp, @nc, @km, @tb, @um)"
+                cmd = New MySqlCommand(save, conn)
+                cmd.Parameters.AddWithValue("@kode", kode.Text)
+                cmd.Parameters.AddWithValue("@tp", tgl_pin.Text)
+                cmd.Parameters.AddWithValue("@nc", nama.Text)
+                cmd.Parameters.AddWithValue("@km", kode_mob.Text)
+                cmd.Parameters.AddWithValue("@tb", lbl_tot_biaya.Text)
+                cmd.Parameters.AddWithValue("@um", uang_muka.Text)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Simpan Berhasil")
+            Else
+                ''Dim edit As String
+                ''edit = "UPDATE tbl_supir SET Nama_Supir = @nama, Alamat_Supir = @alamat, Telp_Supir= @telf WHERE Kode_Supir = @kd"
+                ''cmd = New MySqlCommand(edit, conn)
+                ''cmd.Parameters.AddWithValue("@nama", nama.Text)
+                ''cmd.Parameters.AddWithValue("@alamat", alamat.Text)
+                ''cmd.Parameters.AddWithValue("@telf", telf.Text)
+                ''cmd.Parameters.AddWithValue("@kd", kode.Text)
+                ''cmd.ExecuteNonQuery()
+                MessageBox.Show("Update Berhasil")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dr.Close()
+            Call Clean()
+        End Try
+        dr.Close()
     End Sub
 
     Private Sub Lbl_tot_biaya_TextChanged(sender As Object, e As EventArgs) Handles lbl_tot_biaya.TextChanged

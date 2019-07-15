@@ -200,7 +200,7 @@ Public Class User
 
     'Buat Mencari
     Private Sub Search_TextChanged(sender As Object, e As EventArgs) Handles search.TextChanged
-        sql = "SELECT * FROM tbl_user WHERE Nama_User like '%" & search.Text & "% '"
+        sql = "SELECT * FROM tbl_user WHERE Nama_User like '%" & search.Text & "%'"
         da = New MySqlDataAdapter(sql, conn)
         ds = New DataSet
         da.Fill(ds)

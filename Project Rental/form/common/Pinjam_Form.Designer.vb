@@ -67,9 +67,11 @@ Partial Class Pinjam
         Me.kode = New System.Windows.Forms.Label()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.dgv2 = New System.Windows.Forms.DataGridView()
+        Me.dgv3 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -328,7 +330,7 @@ Partial Class Pinjam
         'stts_pem
         '
         Me.stts_pem.FormattingEnabled = True
-        Me.stts_pem.Items.AddRange(New Object() {"Jalan", "Tidak Jalan"})
+        Me.stts_pem.Items.AddRange(New Object() {"Booking", "Jalan"})
         Me.stts_pem.Location = New System.Drawing.Point(523, 180)
         Me.stts_pem.Name = "stts_pem"
         Me.stts_pem.Size = New System.Drawing.Size(121, 21)
@@ -487,7 +489,7 @@ Partial Class Pinjam
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Location = New System.Drawing.Point(8, 379)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(647, 211)
+        Me.dgv.Size = New System.Drawing.Size(648, 262)
         Me.dgv.TabIndex = 58
         '
         'dgv2
@@ -495,15 +497,24 @@ Partial Class Pinjam
         Me.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv2.Location = New System.Drawing.Point(11, 279)
         Me.dgv2.Name = "dgv2"
-        Me.dgv2.Size = New System.Drawing.Size(645, 77)
+        Me.dgv2.Size = New System.Drawing.Size(657, 77)
         Me.dgv2.TabIndex = 59
+        '
+        'dgv3
+        '
+        Me.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv3.Location = New System.Drawing.Point(661, 379)
+        Me.dgv3.Name = "dgv3"
+        Me.dgv3.Size = New System.Drawing.Size(647, 262)
+        Me.dgv3.TabIndex = 60
         '
         'Pinjam
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.BurlyWood
-        Me.ClientSize = New System.Drawing.Size(662, 592)
+        Me.ClientSize = New System.Drawing.Size(1313, 653)
+        Me.Controls.Add(Me.dgv3)
         Me.Controls.Add(Me.dgv2)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.cbtn)
@@ -551,6 +562,7 @@ Partial Class Pinjam
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -600,4 +612,5 @@ Partial Class Pinjam
     Friend WithEvents tgl_ber As DateTimePicker
     Friend WithEvents tgl_pin As DateTimePicker
     Friend WithEvents dgv2 As DataGridView
+    Friend WithEvents dgv3 As DataGridView
 End Class
