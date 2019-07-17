@@ -8,8 +8,8 @@ Module connect
     Public sql As String
     Public dt As DataTable
     Dim str As String
-    Dim aha As String
     Dim pass = "izzatroxas"
+
 
     Sub Koneksi()
         Try
@@ -17,9 +17,9 @@ Module connect
             conn = New MySqlConnection(str)
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
-                If conn.State = ConnectionState.Open Then
-                    'MessageBox.Show("Koneksi Berhasil")
-                End If
+                'If conn.State = ConnectionState.Open Then
+                'MessageBox.Show("Koneksi Berhasil")
+                'If
             End If
 
         Catch ex As Exception

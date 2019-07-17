@@ -165,6 +165,7 @@ Partial Class Pinjam
         'KK
         '
         Me.KK.FormattingEnabled = True
+        Me.KK.Items.AddRange(New Object() {"Ada", "Tidak Ada"})
         Me.KK.Location = New System.Drawing.Point(142, 65)
         Me.KK.Name = "KK"
         Me.KK.Size = New System.Drawing.Size(121, 21)
@@ -198,6 +199,7 @@ Partial Class Pinjam
         'rencana
         '
         Me.rencana.FormattingEnabled = True
+        Me.rencana.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"})
         Me.rencana.Location = New System.Drawing.Point(142, 159)
         Me.rencana.Name = "rencana"
         Me.rencana.Size = New System.Drawing.Size(121, 21)

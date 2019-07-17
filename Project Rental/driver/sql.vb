@@ -6,7 +6,7 @@ Public Class Sql_com
         Dim ds As New DataSet
         sql = sql_com
         da = New MySqlDataAdapter(sql, conn)
-        da.Fill(dase)
+        da.Fill(ds)
         Return ds
     End Function
 
@@ -15,7 +15,7 @@ Public Class Sql_com
         Dim dt As New DataTable
         sql = sql_com
         da = New MySqlDataAdapter(sql, conn)
-        da.Fill(datab)
+        da.Fill(dt)
         Return dt
     End Function
 
